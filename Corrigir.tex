@@ -1,0 +1,143 @@
+----------------------- REVIEW 1 ---------------------
+
+
+Page 3, Fig 4: maybe it would be good to add one more example of frame (less "intuitive"), for example one with all paths with L shape.
+
+??????
+
+Page 4, before Section 3: I think the result is true (the octahedron not being B1-Helly EPG) but the argument that it is due to the existence of only one minimal B1-EPG representation and that representation is not Helly seems weak... couldn't be the case that a Bk-EPG non-Helly representation can be extended to a Helly one? (it would be not minimal as EPG representation, of course). I'm pretty sure that for high values of k it may happen, not so sure about k=1 (the example of the triangle changes the representation, it is not an extension).
+
+??????
+
+----------------------- REVIEW 2 ---------------------
+
+
+Furthermore, the paper contains many typos, notation issues etc. See, for instance, some of the mistakes in Definition 4.1:
+
+- an instance of POSITIVE (1 IN 3)-3SAT consists of a set $X$ of positive variables and a collection $C$ of clauses on $X$; the notion of CNF-formula, as introduced here, is not well defined.
+- (i): the clause is denoted by $C_i$, but $i$ is not defined, and the corresponding gadget is denoted by $G_c$: there is no clear bijection.
+
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 8
+TITLE: The Complexity of B1-EPG-Helly Graph Recognition
+AUTHORS: Claudson Bornstein, Martin Golumbic, Tanilson Santos, Uéverton Souza and Jayme Szwarcfiter
+
+
+----------- Overall evaluation -----------
+
+This paper claims two main contributions. 
+
+1. B_1-EPG Helly recognition is NP-complete. Here the authors essentially adapt the prior hardness proof for B_1-EPG recognition to the Helly case. It should be emphasized that they really follow the roadmap set out in the prior hardness proof [10] (their reduction also stems from (1 in 3) 3SAT). In fact, it seems that would have been easier for them to follow the general NP-hardness proof given in [CCH16] for the 4 subclasses of B_1-EPG where one restricts the "shapes" of the paths to be a subset of the 4 types of L-shapes (note this reference is certainly related work, and is currently omitted by the authors -- it was also originally a LAGOS paper). The main idea in the hardness proof of [CCH16] also involves a main idea from [10] which is that about blocking the "ends" and "corners" of a given grid path so that the remaining adjacencies have to be formed using "internal" edges. 
+
+[CCH16] Kathie Cameron, Steven Chaplick, Chính T. Hoàng,
+Edge intersection graphs of L-shaped paths in grids,
+Discrete Applied Mathematics, Volume 210, 2016, Pages 185-194,
+https://doi.org/10.1016/j.dam.2015.01.039.
+** this article should be mentioned when the authors refer to the hardness of B_1-EPG and B_2-EPG recognition on page 2 just before fig.1. 
+
+That all being said, I think that their hardness proof is convincing (although I did not check the details in the appendix). 
+
+
+2. B_k-EPG-Helly recognition is in NP. Unfortunately, they are missing one key aspect to truly show NP membership. They argue that it suffices to encode each grid path essentially by the two end points and the sequence bend points used to traverse between them. However, they never argue that the grid will be small enough for them to actually write down these grid points efficiently. While I do believe that this can be argued, it has not been done in the submitted article. 
+
+Evaluation:
+
+Mostly, I found the writing of this article easy to follow and the topic interesting. I did find some small things/typos which I have listed below, and some suggestions for improving the presentation. Overall, I find that the current state of this article is a bit preliminary (eg with the omission of the grid size in the NP membership argument, and the omission of ref [CCH16]). 
+
+--small things/typos--
+
+p.1, par. 2: combine-> combines
+"the problem of VLSI design that combine the notion" 
+
+p.2, par. after fig.1: Helly undefined here. I would prefer having the definition of helly before this point. 
+
+p.2, 3rd par. after fig 1: integers -> integer
+"Each pair of integers coordinates" 
+
+p.2, 3rd par. after fig 1: insert "of" between "distance" and "one"
+"that are at a distance one in the grid."
+
+p.2, 3rd par. after fig 1: A "path in the grid" is defined here. But, it seems that you allow paths to repeat vertices. Is this intentional? If so, I would prefer being told that this is indeed intentional. 
+
+p.2, 3rd par. after fig 1, last sentence: Through -> Throughout
+"Through the paper any ..."
+
+p.2, par. starting with "The Helly ...": a -> to be a
+"where each path is considered a set of edges."
+
+p.2, par. starting with "The Helly ...": I suggest noting here that an alternative notion of Helly could be to consider grid-points instead of edges, but that it makes more sense for your context to consider edges as the focus here is edge intersection. 
+
+p.2, last sentence: I suggest marking all statements proven in the appendix by some symbol, say \star or \daggar and noting it here. 
+
+p.4, Lemma 2.2: this essentially follows from [10] lemma 7.1 (* numbering according to the arxiv version). Why not just cite it here? 
+
+p.4, section 3: As noted above, the size of the grid Q needs to be discussed here as otherwise it is not possible to encode the paths efficiently. 
+
+p.4, par. starting "The input...": coding format -> encoding; allow -> allows
+"This coding format for the paths allow ..."
+
+section 4: The use of capital V for a single vertex of the constructed graph seems like a very poor choice. Especially when V() is used heavily throughout. Please use something else, eg U. 
+
+p.6, conditions (vi): why does it say "; of each one;" at the end? 
+
+p.6, conditions (vi) (vii): I would phrase these differently. Below I provide a suggestion for (vi), and would do similarly for (vii). 
+Current: "Create two graphs isomorphic to H, GB1 and GB2. The vertex T is connected to all vertices of the triangle."
+Suggestion: "Create two copies GB1, GB2 of H so that the vertex T is connected to all vertices of the copies of the triangle (a,b,c) from GB1, GB2". 
+
+p.7, par. starting "By Proposition 4.1...": 
+current: "...for every vertex vi ∈ V(H) such that vi \neq V(C4H)"
+replace by: "...for every vertex vi ∈ V(H) \setminus V(C4H) such that vi \neq V(C4H)"
+
+pg 8, last par: This paragraph gives a nice overview of why the reduction works. I would suggest moving it to just after providing the construction, or possibly to where you start arguing the second direction (ie, that a B_1-EPG-Helly rep. implies a (1-in-3) solution to the formula).
+
+
+----------------------- REVIEW 4 ---------------------
+PAPER: 8
+TITLE: The Complexity of B1-EPG-Helly Graph Recognition
+AUTHORS: Claudson Bornstein, Martin Golumbic, Tanilson Santos, Uéverton Souza and Jayme Szwarcfiter
+
+
+----------- Overall evaluation -----------
+The authors study graphs which have a EPG representation that satisfies the Helly property (EPG-Helly graphs). They first show that every graph is actually like that. Secondly, they show that the B_k-EPG-Helly recognition problem (for k bounded by a polynomial in |V|) belongs to NP. This turns out not to be a trivial task, as a "yes" certificate may theoretically be large. Finally, they focus on the subclass B_1-EPG-Helly. Their main result is NP-completeness of the recognition problem of this class of graphs (called B_1-EPG-Helly): they show completeness by a polynomial reduction using gadgets, from the NP-complete problem "POSITIVE(1 in 3)-3SAT" (each clause must have exactly one true litteral).
+
+I found no major flaw in the proofs and the results are interesting and to my knowledge, new. I therefore suggest to accept the paper.
+
+However, I found that the english level was inconstant, and it made some parts even difficult to understand (like the proof of Proposition 4.3, see below). Also, I found several parts confusing.
+
+I have the following list of small remarks, but regarding spelling/grammar mistakes, this list is not comprehensive. I strongly suggest to let someone with a solid english level proofread the paper again.
+
+p. 1: "constrains" -> "constraints"
+p. 4: Definition 2.3: I guess you want to say " ... its set of edges does not contain another ..." instead of "... its set of edges is not contained in another..."
+p. 4, l. -9 (9 counting from the bottom): "This coding ... allow us... " --> "This coding ... allows us... "
+p. 4,  three conditions at the bottom: you write they are conditions to check for a "yes" certificate, but they are (at least (i) and (ii)) assertions about polynomiality of the checking procedures, which you are going to prove in the sequel. In that sense, condition (iii) is to be rewritten as Lemma 3.3: "We can verify in polynomial time that the set... has the Helly property."
+p. 5: Lemma 3.3: "Let R be the set of relevant edges ..." --> "Let \mathcal{T} be the set of relevant edges ...". And you can remove the first sentence of the proof, which is the same.
+p. 5: Theorem 3.1: "A $B_k$-EPG representation ..." -->  "A $B_k$-EPG-Helly representation ..."
+p. 5, first line of Section 4: "For this prove ..." --> "For this proof..."
+p. 5, proof 3.3: why not put the proof in the appendix (with the other proofs)?
+p. 5, l. -4: "... satisfiable, it is given below" --> "... satisfiable, is given below"
+p. 6, l. -3: "Figures 8 shows..." -->  either "Figure 8 shows..."  or "Figures 8 show..."
+p. 7, Corollary 4.1: "... on the some ..." --> "... on the same ..."
+p. 7, l. -4: "(or a extremity edge)" --> "(or an extremity edge)"
+p. 8, Corollary 4.2: it is not clear to me why it is still NP-complete on 2-apex graphs.
+p. 9, l. 7: "... containing $v_i$." --> "... containing $v_j$."
+p. 9, ll. 12 and 15: " travesses " and "travessing"
+p. 9, l. -14: "...remaining of vertices..." --> "remaining vertices..."
+p. 9, proof 3.1: replace "line" by "row"
+p. 10, case 2 of proof 3.2: "... but $P_2$ does contain." --> "... but $P_2$ does."
+p. 10. ll. -9 and -8: "...of the Figure ..." --> "... of Figure..." Please check the whole paper for such replacements.
+p. 11, l. 8: "... $G_{C_i}$ in $p(V)$ ..." --> "... $G_{C_i}$ to $p(V)$ ..."
+p. 11, l. 11: "... cross, to insert..." --> "... cross, insert ..."
+p. 11, Lemma 4.2: it should be placed after Proposition 4.2 (like in Section 4).
+p. 11, l. -8: "... each central rays..." --> "... each central ray..."
+p. 11, proof 4.2: it should be mentioned somewhere that by minimality of the representation, no additional edge is needed on the different paths.
+p. 11, l. -8: « …each central rays… » —> « …each central ray… »
+p. 12, Proposition 4.2: « … to a frame. If there … »—> « … to a frame, if there … »
+p. 13: Proposition 4.3 is only in the appendix.
+p. 13, Proposition 4.3:: « In any single bend representation … » —> « In any single bend Helly representation … » 
+p. 13, Proof of Proposition 4.3: the third paragraph of the proof should be carefully rewritten. I understood the idea, but it is not clear. For instance, « in the some « should be replaced  by « in the same », and (same line) it is not true that the same central ray or side intersection contains three OTHER paths, since two of them are the same (those in the set of paths representing $C_3^{H_1}$).
+
+Suggestion: clearly,a B_1-EPG representation is Helly if and only each clique is represented by a so called « edge clique » (and not a claw-clique), as defined in reference [8]. Mentioning this fact would in my opinion improve the clarity of the paper.
+
+
