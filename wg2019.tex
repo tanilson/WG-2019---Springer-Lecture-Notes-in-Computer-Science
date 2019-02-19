@@ -83,7 +83,7 @@
 %
 \author{Claudson F.  Bornstein\inst{1} \and
 Martin C. Golumbic\inst{2}  \and
-Tanilson D. Santos\inst{1,3}\thanks{This study was financed in part by the Coordena{\c c}\~ao de Aperfei{\c c}oamento de Pessoal de N\'ivel Superior - Brasil (CAPES) - Finance Code 001.} \and 
+Tanilson D. Santos\inst{1,3,}\thanks{This study was financed in part by the Coordena{\c c}\~ao de Aperfei{\c c}oamento de Pessoal de N\'ivel Superior - Brasil (CAPES) - Finance Code 001.} \and 
 U\'everton S. Souza\inst{4} \and
 Jayme L.  Szwarcfiter\inst{1,5}
 }
@@ -94,8 +94,7 @@ Jayme L.  Szwarcfiter\inst{1,5}
 %
 \institute{Federal University of Rio de Janeiro,Rio de Janeiro-RJ, Brazil\\ \and
 University of Haifa, Haifa, Israel\\ \and 
-Federal University of Tocantins
-    Palmas-TO, Brazil\\ \and 
+Federal University of Tocantins, Palmas-TO, Brazil\\ \and 
 Fluminense Federal University, Niter\'oi-RJ, Brazil\\    
  \and
 State University of Rio de Janeiro, 
@@ -108,7 +107,7 @@ State University of Rio de Janeiro,
 \begin{abstract}
 
 Golumbic, Lipshteyn and Stern defined in 2009 the class of EPG graphs, an intersection graph class  based on edge intersection of paths on a grid. An EPG graph $G$ is a graph that admits a representation where its vertices correspond to paths in a grid $Q$, such that two vertices of $G$ are adjacent if and only if their corresponding paths in $Q$ have a common edge. If the paths in the representation have at most $k$ changes of direction  (bends), we say that this is a  $B_k$-EPG representation. A collection $C$ of sets satisfies the Helly property when every sub-collection of $C$ that is pairwise intersecting has at least a common element. 
-In this paper we show that the problem of recognizing $B_k$-EPG graphs $G=(V,E)$ whose edge-intersections of paths in a grid satisfy the Helly property, so-called $B_k$-EPG-Helly graphs, is in $\mathcal{NP}$, for every $k$ bounded by a polynomial function of $|V(G)|$. In addition, we show that recognizing $B_1$-EPG-Helly graphs is NP-complete, and it remains NP-complete even when restricted to 2-apex and 3-degenerate graphs.
+In this paper we show that the problem of recognizing $B_k$-EPG graphs $G=(V,E)$ whose edge-intersections of paths in a grid satisfy the Helly property, so-called $B_k$-EPG-Helly graphs, is in $\mathcal{NP}$, for every $k$ bounded by a polynomial function of $|V(G)|$. In addition, we show that recognizing $B_1$-EPG-Helly graphs is $NP$-complete, and it remains $NP$-complete even when restricted to 2-apex and 3-degenerate graphs.
 
 \keywords{Edge-intersection of paths on a grid \and Helly property \and Intersection graphs \and $NP$-completeness \and Single bend paths.}
 \end{abstract}
@@ -131,7 +130,7 @@ The \emph{bend number} of a class of graphs is the smallest $k$ for which all gr
 % although no example has yet been found of a planar graph that fails to be B3-EPG
 
 The class of EPG graphs has been studied in several papers, such as \cite{alcon2016, Asinowski2009, cohen2014, golumbic2009, heldt2014,  martin2017}, among others. The investigations frequently approach characterizations with respect to the number of bends of the graph representation. Regarding the complexity of recognition of $B_k$-EPG graphs, only the complexity of recognizing three of these sub-classes of EPG graphs have been determined: %$ B_0$-EPG, $ B_1$-EPG ~\cite{heldt2014} and more recently $B_2$-EPG ~\cite {martin2017}.  
- $B_0$-EPG graphs can be recognized in polynomial time, since it corresponds to the class of interval graphs, see ~\cite{booth1976}. In contrast, $B_1$-EPG and $B_2$-EPG are $NP$-complete, see~\cite{heldt2014, martin2017}, and $B_1$-EPG remains $NP$-complete even for $L$-shaped paths in grid, see~\cite{cameron2016edge}.
+ $B_0$-EPG graphs can be recognized in polynomial time, since it corresponds to the class of interval graphs, see ~\cite{booth1976}. In contrast, recognizing $B_1$-EPG and $B_2$-EPG graphs are $NP$-complete problems, see~\cite{heldt2014, martin2017}, and recognizing $B_1$-EPG graphs  remains $NP$-complete even for $L$-shaped paths in grid, see~\cite{cameron2016edge}.
 
 %\vspace{-0.5cm}
 %\input{./includes/include-img/representacoesepgtriangulo.tex}
@@ -144,7 +143,7 @@ The class of EPG graphs has been studied in several papers, such as \cite{alcon2
 %Note that the representation of Figure~\ref{fig:trianguloepgRepresentacao}(b) satisfies the Helly property, while the representations of Figures~\ref{fig:trianguloepgRepresentacao}(c) and~\ref{fig:trianguloepgRepresentacao}(d) do not satisfy it.
 
 
-This paper studies graphs that have an EPG-Helly representation. We prove that the problem of recognizing $ B_1$-EPG-Helly graphs is $NP$-complete.   The Helly property related to EPG representations of graphs has been studied in~\cite{golumbic2009} and \cite{golumbic2013}. In particular, they have determined the strong Helly number of $B_1$-EPG graphs. 
+This paper studies graphs that have an EPG-Helly representation. We prove that the problem of recognizing $ B_1$-EPG-Helly graphs is $NP$-complete.   The Helly property related to EPG representations of graphs has been studied in~\cite{golumbic2013} and~\cite{golumbic2009}. In particular, they have determined the strong Helly number of $B_1$-EPG graphs. 
 
 % recognition problem.% whose representation has the Helly property.
 
@@ -158,7 +157,7 @@ This paper studies graphs that have an EPG-Helly representation. We prove that t
 %@comment falar q a diagonal não é considerada
 %ver se o conceito de direção não confunde com caminho direcionado
 
-The term \emph{grid} is used to denote the Euclidean space of integer orthogonal coordinates. Each pair of integer \emph{coordinates} are a point or vertex of the grid. The term \emph{edge of the grid}, will be used to denote a pair of vertices that are at a distance of one in the grid. Two edges $e_1$ and $e_2$ are \emph{consecutive edges} when they share exactly one point of the grid. %have a common vertex. %A \emph{finite sequence of consecutive edges} is a finite sequence where every vertices are differents  
+The term \emph{grid} is used to denote the Euclidean space of integer orthogonal coordinates. Each pair of integer \emph{coordinates} corresponds to a point or vertex of the grid. The term \emph{edge of the grid}, will be used to denote a pair of vertices that are at a distance of one in the grid. Two edges $e_1$ and $e_2$ are \emph{consecutive edges} when they share exactly one point of the grid. %have a common vertex. %A \emph{finite sequence of consecutive edges} is a finite sequence where every vertices are differents  
  A \emph{path in the grid} is any finite sequence of consecutive edges $e_1 = (v_1, v_{2}), e_2 = (v_2, v_{3}), \dots, e_i = (v_i, v_{i+1}), \dots, e_m = (v_{m}, v_{m+1})$, where $v_i \neq v_j$ for $i \neq j$. %without  repetition, where each pair of edges $e_{i}, e_{i-1}$ is $e_{i-1} = (v_{i-1}, v_{i})$ and $e_i = (v_i, v_{i+1})$. 
  The first and last edges of a path are called \emph{extremity edges}.
  
@@ -167,7 +166,7 @@ The term \emph{grid} is used to denote the Euclidean space of integer orthogonal
  
  
  
-The \emph{direction of an edge} is vertical when the first coordinate of its vertices  are equal, and is horizontal when the second coordinates are equal. A \emph {bend} in a path is a pair of consecutive edges $ e_1, e_2 $ of that path, such that the directions of $ e_1$ and $ e_2$ are different. When two edges $ e_1$ and $e_2 $ form a bend, they are called \emph { bend edges}. A \emph {segment} is a set of consecutive edges with no bends. %is a path with no bends.
+The \emph{direction of an edge} is vertical when the first coordinates of its vertices  are equal, and is horizontal when the second coordinates are equal. A \emph {bend} in a path is a pair of consecutive edges $ e_1, e_2 $ of that path, such that the directions of $ e_1$ and $ e_2$ are different. When two edges $ e_1$ and $e_2 $ form a bend, they are called \emph { bend edges}. A \emph {segment} is a set of consecutive edges with no bends. %is a path with no bends.
  Two paths are said to be \emph{edge-intersecting}, or  simply  \emph{intersecting}, if they share at least one edge. %Otherwise we say they are \emph{edge-disjoint} (or disjoint).
  Throughout the paper any time we say that two paths intersect, we mean they edge-intersect.  %, all intersections of paths are meant to edge intersections.
 
@@ -255,7 +254,7 @@ Most of the proofs of the paper are detailed in the Appendix.
 
 % \input{./includes/include-img/diagramaEpg.tex}
 
-In this section we examine the $B_1$-EPG representations of a few interesting graphs. First, we consider EPG representations of $C_4$'s.
+In this section we examine the $B_1$-EPG representations of a few graphs that we employ in our constructions. First, we consider EPG representations of $C_4$'s.
 
 %By the results of \cite{golumbic2009}, in Lemma ~\ref{lem:representacaoC4}, every induced cycle of size 4 in a $ B_1$-EPG  representation  of $C_4$ has only a few possible representations.
 
@@ -349,7 +348,7 @@ A (positive) certificate for the {\sc $B_k$-EPG-Helly recognition} problem consi
 
 The following are key concepts that make it easier to control the size of an EPG representation. A relevant edge of a path in a $B_k$-EPG representation is one which is either an extremity edge or a bend edge of the path. Therefore each path with at the most $k$ bends can have up to $2(k + 1)$ relevant edges. Any $B_k$-EPG representation contains at most $2|\mathcal{P}|(k + 1)$ distinct relevant edges. 
 
-The certificate for a verification algorithm  that shows that a graph is a $B_k$-EPG Helly graph is a  $B_k$-EPG representation $R$ containing a collection $\mathcal{P}$ of paths, $|\mathcal{P}| = |V(G)|$, such that  each path $P_i \in P$ is given by its set of relevant edges along with the relevant edges of each path that intersects $P_i$.  The relevant edges for each path are given in the order that they appear in the path, so as to make checking that the edges correspond to a unique path with at most $k$ bends straightforward.  This representation is also handy for checking that the paths form an intersection model for $G$.
+The certificate for a verification algorithm  that shows that a graph is a $B_k$-EPG Helly graph is a  $B_k$-EPG representation $R$ containing a collection $\mathcal{P}$ of paths, $|\mathcal{P}| = |V(G)|$, such that  each path $P_i \in P$ is given by its set of relevant edges along with the relevant edges of each path that intersects $P_i$.  The relevant edges for each path are given in the order that they appear in the path, so as to make checking that the edges corresponding to a unique path with at most $k$ bends straightforward.  This representation is also handy for checking that the paths form an intersection model for $G$.
 
 In order to verify in polynomial time that the input is in fact is a certificate for the problem, we have to assert the following:
 
@@ -421,13 +420,13 @@ Let $\mathcal{P}$ be a collection of paths encoded as a sequence of relevant edg
 %\setcounter{proof}{2}
 
 \begin{proof}
-%Let $\mathcal{T}$ be the set of relevant edges of $R$. We consider each triple $T_i$ of edges of $\mathcal{T}$. Let $\mathcal{P}_i$ be the set of paths of $R$ containing at least two the relevant edges of $T_i$. By Gilmore's theorem~\cite{bergeDuchet1975} the paths of $\mathcal{P}_i$  contain a common edge if only if  $R$ is a Helly representation.  By Lemma~\ref{lem:relevantEdges} they contain a common relevant edge. Since there is a polynomial number of relevant edges, we can identify such a common edge, in polynomial time, and confirm that $R$ is in fact Helly. Since the number of triples is also polynomial, the lemma follows.
-Let $T$ be the set of relevant edges of $\mathcal{P}$. Consider each triple $T_i$ of edges of $T$ . Let $P_i$ be the set of paths of $\mathcal{P}$ containing at least two of the edges in the triple  $T_i$. By Gilmore’s theorem \cite{bergeDuchet1975} $\mathcal{P}$ has the Helly property if an only if the subset of paths $P_i$  corresponding to each triple  $T_i$  has a non-empty intersection.  By Lemma~\ref{lem:relevantEdges} it suffices to examine the intersections on relevant edges. Therefore a polynomial algorithm for checking if $\mathcal{P}$ has the Helly property could examine each of the subsets $P_i$, and for each relevant edge $e$ of a path in $P_i$, to compute the number of paths in $P_i$ that contain $e$. $\mathcal{P}$ has the Helly property if and only if for every  $P_i$  there exists some relevant edge that is present in all paths in $P_i$,  yielding a non-empty intersection.
+%Let $\mathcal{T}$ be the set of relevant edges of $R$. We consider each triple $T_i$ of edges of $\mathcal{T}$. Let $\mathcal{P}_i$ be the set of paths of $R$ containing at least two the relevant edges of $T_i$. By Gilmore's Theorem~\cite{bergeDuchet1975} the paths of $\mathcal{P}_i$  contain a common edge if only if  $R$ is a Helly representation.  By Lemma~\ref{lem:relevantEdges} they contain a common relevant edge. Since there is a polynomial number of relevant edges, we can identify such a common edge, in polynomial time, and confirm that $R$ is in fact Helly. Since the number of triples is also polynomial, the lemma follows.
+Let $T$ be the set of relevant edges of $\mathcal{P}$. Consider each triple $T_i$ of edges of $T$ . Let $P_i$ be the set of paths of $\mathcal{P}$ containing at least two of the edges in the triple  $T_i$. By Gilmore’s Theorem \cite{bergeDuchet1975}, $\mathcal{P}$ has the Helly property if an only if the subset of paths $P_i$  corresponding to each triple  $T_i$  has a non-empty intersection.  By Lemma~\ref{lem:relevantEdges}, it suffices to examine the intersections on relevant edges. Therefore a polynomial algorithm for checking if $\mathcal{P}$ has the Helly property could examine each of the subsets $P_i$, and for each relevant edge $e$ of a path in $P_i$, to compute the number of paths in $P_i$ that contain $e$. $\mathcal{P}$ has the Helly property if and only if for every  $P_i$  there exists some relevant edge that is present in all paths in $P_i$,  yielding a non-empty intersection.
 $\square$ \end{proof}
 
 
 \begin{corollary}\label{cor:comumAtodos}
-Let ${\mathcal P}$ be a set a pairwise intersecting paths in a $B_k$-EPG-Helly representation of a graph $G$. Then the intersection of all paths of  ${\mathcal P}$ contains at least one relevant edge.
+Let ${\mathcal P'}$ be a set a pairwise intersecting paths in a $B_k$-EPG-Helly representation of a graph $G$. Then the intersection of all paths of  ${\mathcal P'}$ contains at least one relevant edge.
 \end{corollary}
 
 Note that the property described in Corollary~\ref{cor:comumAtodos} is due to Gilmore's Theorem~\cite{bergeDuchet1975}, and it applies only to representations that satisfy Helly's property.
@@ -453,7 +452,7 @@ A counting argument shows that there are at most $2|\mathcal{P}|(k+1)$ relevant 
  Therefore the grid $Q$ is such that each pair of consecutive columns and of consecutive rows of $Q$  has at least one relevant edge of $R$ or contains a relevant edge crossing it.  
   Since $Q$ is the smallest possible grid for representing $G$ then the first row and the first column of $Q$ must both contain at least one point belonging to some relevant edge of $R$. 
 Thus, if $G$ is $B_k$-EPG then it admits a $B_k$-EPG representation on a grid of size at most $4|\mathcal{P}|(k+1) \times 4|\mathcal{P}|(k+1)$.
-In addition, if $R$ is a $B_k$-EPG-Helly representation then, by Corollary~\ref{cor:comumAtodos},  $R'$ is also a  $B_k$-EPG-Helly representation.
+In addition, by Corollary~\ref{cor:comumAtodos}, it holds that the contraction operation previously described preserves the Helly property, if any. Hence, letting $R$ be a $B_k$-EPG-Helly representation of a graph $G$ on a grid $Q$ with the smallest possible size it holds that $Q$ has size at most $4|\mathcal{P}|(k+1) \times 4|\mathcal{P}|(k+1)$.
 \qed
 \end{proof}
 
@@ -469,7 +468,7 @@ Finally, by Lemmata~\ref{lem:verify1}, \ref{lem:relevantEdges} and \ref{lem:veri
 
 \section{$NP$-hardness}\label{sec:sectionDispositivoClausula}
 
-Now we will prove that  $B_1$-EPG-Helly graph recognition is $NP$-complete. For this proof we follow the roadmap set out in the prior hardness proof of~\cite{heldt2014}. Thus, we set up a reduction from {\sc Positive (1 in 3)-3SAT} defined  as follows:
+Now we will prove that  $B_1$-EPG-Helly graph recognition is $NP$-complete. For this proof we follow the roadmap set out in the prior hardness proof of~\cite{heldt2014}. We set up a reduction from {\sc Positive (1 in 3)-3SAT} defined  as follows:
 
 % Now we will prove that  $B_1$-EPG-Helly graph recognition is $NP$-complete. For this proof we set up a reduction from {\sc Positive (1 in 3)-3SAT} defined  as follows:
 
@@ -479,10 +478,10 @@ Now we will prove that  $B_1$-EPG-Helly graph recognition is $NP$-complete. For 
 
 {\sc Positive (1 in 3)-3SAT } is a well known $NP$-complete problem (see \cite{johnson1979}, problem [L04], page 259). {\sc Positive (1 in 3)-3SAT} remains $NP$-complete when the incidence graph of the input CNF (Conjunctive Normal Form) formula is a planar graph~\cite{mulzer2008minimum}.
 
-Given a formula $F$ that is an instance of {\sc Positive (1 in 3)-3SAT} we will present a polynomial-time construction of a graph $ G_F$ such that $ G_F $ is $ B_1$-EPG-Helly if and only if $ F $ is satisfiable. This graph will contain an induced subgraph $ G_c$ with 12 vertices (called \emph {clause gadget}) for every clause $ c \in C $, and an induced subgraph (\emph {variable gadget}) for each variable $ x_j$, containing a special vertex  $ v_j$, plus a \emph{base gadget}  with 55 additional vertices.
+Given a formula $F$ that is an instance of {\sc Positive (1 in 3)-3SAT} we will present a polynomial-time construction of a graph $ G_F$ such that $ G_F $ is $ B_1$-EPG-Helly if and only if $ F $ is satisfiable. This graph will contain an induced subgraph $ G_{C_i}$ with 12 vertices (called \emph {clause gadget}) for every clause $C_i \in \mathcal{C}$, and an induced subgraph (\emph {variable gadget}) for each variable $ x_j$, containing a special vertex  $ v_j$, plus a \emph{base gadget}  with 55 additional vertices.
 
 %Since a Sun graph $S_4$ whose center is a cycle of size 4 and adding a false twin to each vertex of $S_4$ that is not a member of central induced cycle then we have the graph $H$. 
-We will use a graph $H$ isomorphic to the graph presented in Figure~\ref{fig:gadgetBase}, as a gadget to perform the proof. For each clause $c$ of $F$ of the target problem, we will have a \emph{clause gadget} isomorphic to $H$, denoted by $G_c$. %The graph $H$ consists of subgraphs whose $B_1$-EPG representations are well known, such as: cycles of sizes 3 and 4.
+We will use a graph $H$ isomorphic to the graph presented in Figure~\ref{fig:gadgetBase}, as a gadget to perform the proof. For each clause $C_i$ of $F$ of the target problem, we will have a \emph{clause gadget} isomorphic to $H$, denoted by $G_{c_i}$. %The graph $H$ consists of subgraphs whose $B_1$-EPG representations are well known, such as: cycles of sizes 3 and 4.
 \vspace{-0.5cm}
 \input{./includes/include-img/gadgetB1EpgHelly.tex} \vspace{-0.5cm}
 
@@ -494,9 +493,9 @@ The reduction of a formula $F$ from  {\sc Positive (1 in 3)-3SAT}  to a particul
 Let $F$ be a CNF-formula with no negative literals, in which every clause has exactly three literals. The graph $G_F$ is constructed as follows:
 
 \begin{enumerate}
-\item For each clause $C_i \in F$ create a  \textit{clause gadget} $G_{c}$, isomorphic to  graph $H$;
+\item For each clause $C_i \in \mathcal{C}$ create a  \textit{clause gadget} $G_{C_i}$, isomorphic to  graph $H$;
 
-\item For each variable $x_{j}$ create a \emph{variable vertex} $v_{j}$ that is adjacent to the vertex $a$, $e,$ or $h$ of $G_c$, when $x_{j}$ is the first, second or third variable in $C_i$, respectively;
+\item For each variable $x_{j}$ create a \emph{variable vertex} $v_{j}$ that is adjacent to the vertex $a$, $e,$ or $h$ of $G_{C_i}$, when $x_{j}$ is the first, second or third variable in $C_i$, respectively;
 
 \item For each variable vertex $v_{j}$, construct a \emph{variable gadget} formed by adding two copies of $H$, $H_1$ and $H_2$, and making $v_j$ adjacent to the vertices of the 2 triangles $(a, b, c)$ in  $H_1$ and $H_2$.
 
@@ -504,16 +503,16 @@ Let $F$ be a CNF-formula with no negative literals, in which every clause has ex
 
 %\item The  subgraph induced by \emph{variable vertex}  $v_{j}$, and also $V(H_1)$ and $V(H_2)$ will be called \emph{variable gadget}; 
 
-\item Create a vertex $V$, that will be used as vertical reference of the construction, and add edges from $V$ to each vertex  $d$;%$d \in V(G_c)$;
+\item Create a vertex $V$, that will be used as vertical reference of the construction, and add edges from $V$ to each vertex  $d$ of the clause gadgets;%$d \in V(G_c)$;
 
 \item Create a bipartite graph $K_{2,4}$ with a particular vertex $T$ that is in the largest stable set. This vertex is nominated \emph{true vertex}. $T$ is adjacent to all $v_{j}$ and also to $V$;
 
-\item Create two  graphs isomorphic to $H$, $G_{B1}$ and $G_{B2}$. The vertex $T$ is connected to each vertex vertices of the triangle (a,b,c) in $G_{B1}$ and $G_{B2}$;
+\item Create two  graphs isomorphic to $H$, $G_{B1}$ and $G_{B2}$. The vertex $T$ is connected to each vertex of the triangle (a,b,c) in $G_{B1}$ and $G_{B2}$;
 
 
 \item Create two graphs isomorphic  to $H$, $G_{B3}$ and $G_{B4}$. The vertex $V$ is connected to each vertex of the triangle (a,b,c) in $G_{B3}$ and $G_{B4}$;
 
-\item The  subgraph induced by vertices $V(K_{2,4})$, $T$ and $V$,  $V(G_{B1})$ and $V(G_{B2})$, and also $V(G_{B3})$ and $V(G_{B4})$ will be referred to as the  \emph{base gadget}. 
+\item The  subgraph induced by the set of vertices $\{V(K_{2,4}) \cup  \{T, V\} \cup V(G_{B1}) \cup V(G_{B2}) \cup V(G_{B3}) \cup V(G_{B4})\}$ will be referred to as the  \emph{base gadget}. 
 \end{enumerate}
 \end{definition}
 
@@ -623,7 +622,7 @@ Note that we can apply rotations and mirroring operations, while maintaining it 
 %On this $B_{1}$-EPG-Helly representation presented we can apply rotation and mirroring operations, because these operations do not change the structure. We can also a change the direction of the bend (see Figure~\ref{fig:falsepietruepieframe}(c) and Figure~\ref{fig:outraRepresentacaoFrame}), but also adjust other paths if needed, so as to not change the intersections between the paths.
 
 \begin{definition}
-In a single bend representation of a graph $C_4$ isomorphic to a frame, the paths that represent consecutive vertices in the $C_4$ are called \emph{consecutive paths} and the segment that corresponds to the intersection between two consecutive paths is called \emph{side intersection}.  
+In a single bend representation of a graph $C_4$ isomorphic to a frame, the paths that represent consecutive vertices in the $C_4$ are called \emph{con\-se\-cu\-ti\-ve paths} and the segment that corresponds to the intersection between two consecutive paths is called \emph{side intersection}.  
 \end{definition}
 
 \begin{lemma}\label{lem:2vertical2horizontal}
@@ -652,7 +651,7 @@ In any single bend minimal representation of a graph isomorphic to $H$, the foll
 \input{./includes/include-img/representacoesB1EpgHellyBase.tex}
 
 \input{./includes/include-img/outraRepresentacaoFrame.tex}
-\vspace{-0.5cm}
+
 \vspace{-0.5cm}
 \begin{definition}
 Consider a graph $G$ and a vertex $v \in V(G)$. If in a $B_1$-EPG representation of $G$ the two bend edges (or one extremity edge) of the path $P_{v}$ intersects other paths, then we say that $P_{v}$ has an \emph{obstructed bend (or extremity)}. 
@@ -715,12 +714,7 @@ If a graph $G_F$, constructed according to Definition~\ref{sec:reducao}, admits 
 
 Note that a $B_1$-EPG representation is Helly if and only if each clique is represented by a edge clique (and not by a claw-clique). More details on edge clique and claw-clique can be found in~\cite{golumbic2009}. Thus, an alternative way to check that a representation is Helly is to note that all cliques are represented as edge clique. 
 
-\begin{theorem}
-{\sc $B_{1}$-EPG-Helly graph recognition} is $NP$-complete.
-\end{theorem}
-\begin{proof} %\textbf{Proof}.
-By Theorem~\ref{teo:nppertinencia} and Lemmas~\ref{lem:ida} and~\ref{lem:volta}.
-$\square$ \end{proof}
+\smallskip
 
 Some of the vertices of $G_F$ have highly constrained $B_1$-EPG representations. Vertex $T$ has its bend	and both extremities	obstructed	by its neighbors in	$G_{B1}$, $G_{B2}$ and in the $K_{2,4}$
 subgraphs. Vertex $V$ and each variable vertex $v_i$ must have one of its segments internally contained in $T$, and also have its extremities and bend obstructed.  Therefore, vertex $V$ and each
@@ -737,9 +731,14 @@ will be	true in	any possible representation of $G_F$. Conversely, it is	fairly
 straightforward to obtain a $B_1$-EPG representation for $G_F$ given a truth assignment	for
 the formula $F$.
 
-\smallskip
+\begin{theorem}
+{\sc $B_{1}$-EPG-Helly graph recognition} is $NP$-complete.
+\end{theorem}
+\begin{proof} %\textbf{Proof}.
+By Theorem~\ref{teo:nppertinencia} and Lemmas~\ref{lem:ida} and~\ref{lem:volta}.
+$\square$ \end{proof}
 
-We say that a $k$-apex graph is a graph that can be made planar by the removal of $k$ vertices. In addition, a $d$-degenerate graph is a graph in which every subgraph has a vertex of degree at most $d$.
+We say that a $k$-apex graph is a graph that can be made planar by the removal of $k$ vertices. In addition, a $d$-degenerate graph is a graph in which every subgraph has a vertex of degree at most $d$. Remind that {\sc Positive (1 in 3)-3SAT} remains $NP$-complete when the incidence graph of the input formula is planar~\cite{mulzer2008minimum}. Thus, the following corollary holds.
 
 \begin{corollary}\label{coro:2apexAnd3degenerate}
 {\sc $B_{1}$-EPG-Helly graph recognition} is $NP$-complete on $2$-apex and $3$-degenerate graphs.
